@@ -10,13 +10,13 @@ from website.common.CommonPaginator import SelfPaginator
 
 
 @login_required
-@PermissionVerify()
+# @PermissionVerify()
 def WriteArticle(request):
     if request.method == "POST":
         form = ArticleForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(reverse('ReadArticle'))
+            return HttpResponseRedirect(reverse('blog_read'))
     else:
         form = ArticleForm()
 
@@ -28,14 +28,14 @@ def WriteArticle(request):
 
 
 @login_required
-@PermissionVerify()
+# @PermissionVerify()
 def ReadArticle(request):
 
-    mArticle = Article.objects.all()
-    lst = SelfPaginator(request, mArticle, 20)
+    article_list = Article.objects.all()
+    # lst = SelfPaginator(request, article_list, 20)
     kwvars = {
-        'lPage': lst,
+        # 'lPage': lst,
         'request': request,
+        'article_list':article_list,
     }
-
     return render_to_response('BlogManage/blog.read.html', kwvars, RequestContext(request))

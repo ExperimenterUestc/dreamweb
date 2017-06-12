@@ -2,18 +2,15 @@
 <html crossriderapp2258="true"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<!-- title -->
-		<title>Grey | Free Html5 Template</title>
+		<title>{% block title %}{% endblock %}</title>
 
 		<!-- meta -->
 		<meta charset="UTF-8">
 
 		<!-- links -->
-		<link rel="stylesheet" type="text/css" media="screen" href="./css/style.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="/static/css/style.css">
 
 		<!-- scripts -->
-
-		<!-- IE Hacks -->
-		<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     </head>
     <body class="home blog">
      
@@ -38,41 +35,8 @@
 			<div class="container_16">
 				<section id="posts" class="prefix_1 grid_9">
 
+                {% block content %}{% endblock %}
 
-                    {% for article in article_list %}
-                        <article>
-                            <h2><a href="#" >{{ article.name }}</a></h2>
-                            <div class="entry">
-                                {{ article.text }}
-                            </div>
-                        </article>
-                    {% endfor %}
-
-
-{##}
-{#					<article>#}
-{#						<h2><a href="#" >Mhmm Coffee Break!</a></h2>#}
-{#						<p class="info">December 27th, 2010  |  by <span><a href="#"  rel="author">admin</a></span>  |  <a href="#"  rel="category">updates</a></p>#}
-{#						<div class="time"><p>Dec<br><span>27</span></p></div>#}
-{#						#}
-{#                        <p><img src="images/caffee-break-final-510x150.jpg" height="150" width="510"></p>#}
-{#						#}
-{#        				<div class="entry">#}
-{#        					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.#}
-{#							 Praesent sed turpis turpis, eu mattis sem. Sed tristique porta cursus. #}
-{#							Class aptent taciti sociosqu ad litora torquent per conubia nostra, per #}
-{#							inceptos himenaeos. Donec vestibulum, enim nec condimentum ullamcorper, #}
-{#							magna ipsum sagittis sapien, vel egestas lorem mi et neque. Nulla #}
-{#							ultrices felis eget arcu vulputate at hendrerit augue euismod. Nulla at #}
-{#							velit ac turpis sollicitudin consequat. Etiam leo tortor, faucibus a #}
-{#							consectetur et, consequat venenatis velit. Curabitur tempus sem vitae #}
-{#							elit gravida a suscipit leo placerat.</p>#}
-{#							<p> <a href="#" class="more-link">Read full story</a></p>#}
-{#        				</div>#}
-{#                        <div class="clear"></div>#}
-{#						<p class="bottom_info"><a href="#" >1 Comment »</a></p>#}
-{#					</article>#}
-{#                    #}
 
 
     		<div class="navigation">
@@ -103,14 +67,14 @@
 					<hr>
 
 
-					<!-- RSS / Twitter -->
+					<!-- RSS / Twitter -->/
 					<section id="rss">
-						<p><a href="#"><img src="images/rss_32.png" ></a></p>
+						<p><a href="#"><img src="/static/images/socials/rss_32.png" ></a></p>
 						<p><a href="#">SUBSCRIBE</a><br><strong>2021</strong> readers</p>
 						<p class="rss_sub_links"><a href="#">rss feed</a> | <a href="#">email updates</a></p>
 					</section>
 					<section id="twitter">
-						<p><a href="#"><img src="images/twitter_32.png" ></a></p>
+						<p><a href="#"><img src="/static/images/socials/twitter_32.png" ></a></p>
 						<p><a href="#">FOLLOW ME</a><br><strong>4386</strong> followers</p>
 					</section>
 					<hr>
@@ -150,15 +114,15 @@ it works perfectly! :)<br><a href="#">Simone D'Amico</a></li></ul>					<div clas
 					<div id="inspiration" class="grid_4">
 						<h4>Find Inspiration</h4>
 
-						<a href="#" ><img src="images/7325332956_178b16f0b2_s.jpg" ></a>
-						<a href="#" ><img src="images/7139484443_59ba355a67_s.jpg" ></a>
-						<a href="#" ><img src="images/6991926526_bc2b9af686_s.jpg" ></a>
-						<a href="#" ><img src="images/6991884950_a8a9d7c6ea_s.jpg" ></a>
-						<a href="#" ><img src="images/6990048348_0202f723df_s.jpg" ></a>
-						<a href="#" ><img src="images/7136013721_cbcca8c067_s.jpg" ></a>
-						<a href="#" ><img src="images/7135992035_b42e018bef_s.jpg" ></a>
-						<a href="#" ><img src="images/6937250572_8ab4f0a557_s.jpg" ></a>
-						<a href="#" ><img src="images/6933739362_fcf621565a_s.jpg" ></a>
+						<a href="#" ><img src="/static/images/user1/7325332956_178b16f0b2_s.jpg" ></a>
+						<a href="#" ><img src="/static/images/user1/7139484443_59ba355a67_s.jpg" ></a>
+						<a href="#" ><img src="/static/images/user1/6991926526_bc2b9af686_s.jpg" ></a>
+						<a href="#" ><img src="/static/images/user1/6991884950_a8a9d7c6ea_s.jpg" ></a>
+						<a href="#" ><img src="/static/images/user1/6990048348_0202f723df_s.jpg" ></a>
+						<a href="#" ><img src="/static/images/user1/7136013721_cbcca8c067_s.jpg" ></a>
+						<a href="#" ><img src="/static/images/user1/7135992035_b42e018bef_s.jpg" ></a>
+						<a href="#" ><img src="/static/images/user1/6937250572_8ab4f0a557_s.jpg" ></a>
+						<a href="#" ><img src="/static/images/user1/6933739362_fcf621565a_s.jpg" ></a>
 					</div>
 					<div id="twitter_feed" class="grid_4">
 						<h4>Twitter Feed</h4>

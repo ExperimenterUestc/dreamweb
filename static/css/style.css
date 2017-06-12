@@ -29,7 +29,7 @@
 
 /* 01. Basic Elements   */
 body {
-	background: url('../images/bg.png') repeat;
+	background: url('/static/images/user1/bg.png') repeat;
 	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
 	font-size: 62.5%;
 }
@@ -77,7 +77,7 @@ textarea {
 blockquote {
     font-style: italic;
     padding-left: 30px;
-    background: url('../images/quote.png') no-repeat top left;
+    background: url('/static/images/user1/quote.png') no-repeat top left;
 }
 
 quote:before, quote:after {content: '"';}
@@ -121,7 +121,7 @@ pre {
 
 /* 03. Layout Structure */
 header {
-	background: url('../images/header.png') repeat-x;
+	background: url('../images/user1/header.png') repeat-x;
 	display: block;
 	height: 160px;
 	width: 100%;
@@ -134,10 +134,10 @@ nav {
 	text-align: right;
 }
 #wrapper {
-	background: url('../images/wrapper.png') repeat-y center; /* IE */
-	background: url('../images/top_wrapper.png') no-repeat center top,
-				url('../images/bottom_wrapper.png') no-repeat center bottom,
-				url('../images/wrapper.png') repeat-y center;
+	background: url('../images/user1/wrapper.png') repeat-y center; /* IE */
+	background: url('../images/user1/top_wrapper.png') no-repeat center top,
+				url('../images/user1/bottom_wrapper.png') no-repeat center bottom,
+				url('../images/user1/wrapper.png') repeat-y center;
 
 	margin-top: 50px;
 	padding: 50px 0;
@@ -276,7 +276,7 @@ footer {
 						-webkit-border-radius: 10px;
 					}
 						article .time p {
-							background: url('../images/header.png') no-repeat;
+							background: url('../images/user1/header.png') no-repeat;
 							color: white;
 							display: block;
 							font-family: Georgia, "Times New Roman", Times, serif;
@@ -297,8 +297,8 @@ footer {
 
                 article .post_socials { text-align: right; padding: 20px 0; }
                 article #box_author {
-                    background: url('../images/author_hr.png') left top no-repeat,
-                                url('../images/author_hr.png') left bottom no-repeat;
+                    background: url('../images/user1/author_hr.png') left top no-repeat,
+                                url('../images/user1/author_hr.png') left bottom no-repeat;
                     margin: 50px 0;
                     padding: 0 10px;
                     min-height: 130px;
@@ -339,7 +339,7 @@ footer {
 				line-height: 30px;
 			}
 				.navigation .alignleft {
-					background: url('../images/navleft.png') no-repeat top left;
+					background: url('../images/user1/navleft.png') no-repeat top left;
 					float: left;
 					height: 30px;
 					width: 141px;
@@ -348,7 +348,7 @@ footer {
 				}
 
 				.navigation .alignright {
-					background: url('../images/navright.png') no-repeat top left;
+					background: url('../images/user1/navright.png') no-repeat top left;
 					float: right;
 					height: 30px;
 					width: 126px;
@@ -421,7 +421,7 @@ footer {
 		/* 03.03.02 Aside */
 		aside { color: #2d2d2d; }
 			#search {
-				background: #f7f7f7 url('../images/search.png') no-repeat 10px center;
+				background: #f7f7f7 url('../images/user1/search.png') no-repeat 10px center;
 				border: none;
 				color: #2d2d2d;
 				height: 35px;
@@ -468,7 +468,7 @@ footer {
 						ul.categories li a:hover, ul.blogroll li a:hover { text-decoration: underline; }
 
 			ul.recent_comments {
-				list-style-image: url('../images/quote.png');
+				list-style-image: url('../images/user1/quote.png');
 				font-size: 1.2em;
 			}
 				ul.recent_comments li {
@@ -492,7 +492,7 @@ footer {
 
 
 			aside hr {
-				background: url('../images/hr.png') no-repeat center;
+				background: url('../images/user1/hr.png') no-repeat center;
 				border: none;
 				height: 25px;
 			}
@@ -541,7 +541,7 @@ footer {
 	/* 03.04 Footer */
 	footer {}
 		section#footer_content {
-			background: url('../images/footer_content.png') repeat;
+			background: url('../images/user1/footer_content.png') repeat;
 			margin-top: 30px;
 			padding-bottom: 20px;
 		}
