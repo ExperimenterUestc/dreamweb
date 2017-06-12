@@ -4,6 +4,9 @@
     Read
 {% endblock %}
 
+{% block h1 %}
+    <a href="#">{{ request.user }}</a>
+{% endblock %}
 
 {% block content %}
     {% for article in article_list %}

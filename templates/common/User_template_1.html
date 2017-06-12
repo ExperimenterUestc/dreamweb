@@ -18,7 +18,12 @@
     	<header>
     		<div id="light">
 	    		<div class="container_16">
-	    			<h1 class="grid_8"><a href="#">Grey</a></h1>
+	    			<h1 class="grid_8">
+                        {% block h1 %}
+                            <a href="#">Your Name</a>
+                        {% endblock %}
+
+                    </h1>
 					<nav class="grid_8">
 					        <ul id="menu-menu" class="menu"><li><a href="#">Home</a></li>
 							<li><a href="#">About</a></li>
