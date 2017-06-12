@@ -30,6 +30,7 @@ def WriteArticle(request):
 @login_required
 @PermissionVerify()
 def ReadArticle(request):
+
     mArticle = Article.objects.all()
     lst = SelfPaginator(request, mArticle, 20)
     kwvars = {
