@@ -38,36 +38,43 @@
 			<div class="container_16">
 				<section id="posts" class="prefix_1 grid_9">
 
-					<article>
-						<h2><a href="#" >Mhmm Coffee Break!</a></h2>
-						<p class="info">December 27th, 2010  |  by <span><a href="#"  rel="author">admin</a></span>  |  <a href="#"  rel="category">updates</a></p>
-						<div class="time"><p>Dec<br><span>27</span></p></div>
-						
-                        <p><img src="images/caffee-break-final-510x150.jpg" height="150" width="510"></p>
-						
-        				<div class="entry">
-        					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							 Praesent sed turpis turpis, eu mattis sem. Sed tristique porta cursus. 
-							Class aptent taciti sociosqu ad litora torquent per conubia nostra, per 
-							inceptos himenaeos. Donec vestibulum, enim nec condimentum ullamcorper, 
-							magna ipsum sagittis sapien, vel egestas lorem mi et neque. Nulla 
-							ultrices felis eget arcu vulputate at hendrerit augue euismod. Nulla at 
-							velit ac turpis sollicitudin consequat. Etiam leo tortor, faucibus a 
-							consectetur et, consequat venenatis velit. Curabitur tempus sem vitae 
-							elit gravida a suscipit leo placerat.</p>
-							<p> <a href="#" class="more-link">Read full story</a></p>
-        				</div>
-                        <div class="clear"></div>
-						<p class="bottom_info"><a href="#" >1 Comment »</a></p>
-					</article>
-                    
+
+                    {% for article in article_list %}
+                        <article>
+                            <h2><a href="#" >{{ article.name }}</a></h2>
+                            <div class="entry">
+                                {{ article.text }}
+                            </div>
+                        </article>
+                    {% endfor %}
 
 
-    		
+{##}
+{#					<article>#}
+{#						<h2><a href="#" >Mhmm Coffee Break!</a></h2>#}
+{#						<p class="info">December 27th, 2010  |  by <span><a href="#"  rel="author">admin</a></span>  |  <a href="#"  rel="category">updates</a></p>#}
+{#						<div class="time"><p>Dec<br><span>27</span></p></div>#}
+{#						#}
+{#                        <p><img src="images/caffee-break-final-510x150.jpg" height="150" width="510"></p>#}
+{#						#}
+{#        				<div class="entry">#}
+{#        					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.#}
+{#							 Praesent sed turpis turpis, eu mattis sem. Sed tristique porta cursus. #}
+{#							Class aptent taciti sociosqu ad litora torquent per conubia nostra, per #}
+{#							inceptos himenaeos. Donec vestibulum, enim nec condimentum ullamcorper, #}
+{#							magna ipsum sagittis sapien, vel egestas lorem mi et neque. Nulla #}
+{#							ultrices felis eget arcu vulputate at hendrerit augue euismod. Nulla at #}
+{#							velit ac turpis sollicitudin consequat. Etiam leo tortor, faucibus a #}
+{#							consectetur et, consequat venenatis velit. Curabitur tempus sem vitae #}
+{#							elit gravida a suscipit leo placerat.</p>#}
+{#							<p> <a href="#" class="more-link">Read full story</a></p>#}
+{#        				</div>#}
+{#                        <div class="clear"></div>#}
+{#						<p class="bottom_info"><a href="#" >1 Comment »</a></p>#}
+{#					</article>#}
+{#                    #}
 
 
-
-    		
     		<div class="navigation">
                 <div class="alignleft"><a href="#">Older Posts</a></div></div>
 
