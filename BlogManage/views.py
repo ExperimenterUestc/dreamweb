@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from BlogManage.models import Article
 from BlogManage.forms import ArticleForm
+from UserManage.models import User
 from django.contrib.auth.decorators import login_required
 from UserManage.views.permission import PermissionVerify
 from django.http import HttpResponse,HttpResponseRedirect
@@ -31,13 +32,19 @@ def WriteArticle(request):
 # @login_required
 # @PermissionVerify()
 def ReadArticle(request,username):
-    print username
-
-    article_list = Article.objects.all()
+    author_list = User.objects.filter(username=username)
+    if(len(author_list)!=1):
+        return render_to_response("Not a useful adress.")
+    article_list = Article.objects.filter(author=author_list[0])
     # lst = SelfPaginator(request, article_list, 20)
     kwvars = {
         # 'lPage': lst,
         'request': request,
         'article_list':article_list,
+        'author':author_list[0]
     }
     return render_to_response('BlogManage/blog.read.html', kwvars, RequestContext(request))
+
+
+def PublicArticle(request):
+    render()

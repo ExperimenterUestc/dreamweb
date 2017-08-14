@@ -24,16 +24,23 @@
                         {% endblock %}
 
                     </h1>
-					<nav class="grid_8">
-					        <ul id="menu-menu" class="menu"><li><a href="#">Home</a></li>
-							<li><a href="#">About</a></li>
-							<li><a href="#">Contact</a></li>
-							</ul>					
-                    </nav>
+                    {% if request.user == author %}
+                        <nav class="grid_8">
+                                <ul id="menu-menu" class="menu"><li><a href= {% url "home" %}> Home</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Contact</a></li>
+                                </ul>
+                        </nav>
+                    {% else %}
+                                <nav class="grid_8">
+                                正使用游客身份访问
+                                 <a href={%   url "loginurl" %}>登录</a>
+                                </ul>
+                        </nav>
+                    {% endif %}
 	    		</div>
 			</div>
     	</header>
-        <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >Website Template</a></div>
 
 		<!-- wrapper -->
 		<div id="wrapper">
