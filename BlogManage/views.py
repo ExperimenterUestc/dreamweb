@@ -18,7 +18,7 @@ def WriteArticle(request):
         if form.is_valid():
             form.author = request.user
             form.save()
-            return HttpResponseRedirect(reverse('blog_read'))
+            return HttpResponseRedirect(reverse('blog_read',kwargs={'username':request.user.username}))
     else:
         form = ArticleForm()
 
@@ -47,4 +47,16 @@ def ReadArticle(request,username):
 
 
 def PublicArticle(request):
-    render()
+
+    import random
+    article_list  =Article.objects.all()
+    if(len(article_list)>10):
+        article_list = random.sample(article_list,10)
+
+    kwvars = {
+        # 'lPage': lst,
+        'request': request,
+        'article_list':article_list,
+    }
+
+    return render_to_response("BlogManage/blog.public.html",kwvars,RequestContext(request))

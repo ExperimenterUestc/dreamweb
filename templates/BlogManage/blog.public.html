@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Public
+{% endblock %}
+
+{% block content %}
+
+    {% for article in article_list %}
+
+{#        <h3>{{ article.name }}</h3>#}
+{#            <div class="block">#}
+{#                <p>{{ article|slice:'50' }}</p>#}
+
+        <div class="jumbotron">
+          <h3>{{ article.name }}</h3>
+          <p>{{ article.text|slice:'50' }} ...</p>
+{#          <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>#}
+        </div>
+
+
+    {% endfor %}
+
+
+{#    <div class="channel-item">#}
+{#    <div class="likes">303<br>喜欢</div>#}
+{#    <div class="bd">#}
+{#      <h3><a href="https://www.douban.com/group/topic/105703046/">这是一个正经的，提供电脑故障维修建议的帖子</a></h3>#}
+{#      <div class="block">#}
+{##}
+{#        <div class="pic">#}
+{#          <div class="pic-wrap">#}
+{#            <img src="https://img1.doubanio.com/view/group_topic/small/public/p87430518.webp">#}
+{#          </div>#}
+{#        </div>#}
+{#        <p>如果盖高了 欢迎收藏 总会有和你一样的电脑问题出现#}
+{##}
+{#若有解决不了的问题 一定是你动手能力太弱 请自行购买男朋友服务#}
+{##}
+{#主要提供服务如下：#}
+{##}
+{#1.电脑故障解决#}
+{##}
+{#2.手机软件系统故障解...#}
+{#      </p></div>#}
+{#      <div class="source">#}
+{##}
+{#        <span class="from">来自<a href="https://www.douban.com/group/asshole/">我总觉得自己就是一个傻逼小组</a></span>#}
+{#        <span class="pubtime">08-11</span>#}
+{#      </div>#}
+{#    </div>#}
+{#  </div>#}
+
+
+{% endblock %}
