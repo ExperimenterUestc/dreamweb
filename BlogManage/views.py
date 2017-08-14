@@ -15,6 +15,7 @@ def WriteArticle(request):
     if request.method == "POST":
         form = ArticleForm(request.POST)
         if form.is_valid():
+            form.author = request.user
             form.save()
             return HttpResponseRedirect(reverse('blog_read'))
     else:
