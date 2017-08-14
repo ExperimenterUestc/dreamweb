@@ -28,9 +28,10 @@ def WriteArticle(request):
     return render_to_response('BlogManage/blog.write.html', kwvars, RequestContext(request))
 
 
-@login_required
+# @login_required
 # @PermissionVerify()
-def ReadArticle(request):
+def ReadArticle(request,username):
+    print username
 
     article_list = Article.objects.all()
     # lst = SelfPaginator(request, article_list, 20)
