@@ -8,12 +8,12 @@ from BlogManage.models import Article
 class ArticleForm(forms.ModelForm):
     class Meta:
         model = Article
-        fields = ['name','text','author']
+        # fields = ['name','text','author']
         widgets = {
             'name': forms.TextInput(attrs={'class':'form-control'}),
             'text': forms.TextInput(attrs={'class': 'form-control'}),
         }
-        exclude = ['author']
+        # exclude = ['author']
 
     def __init__(self, *args, **kwargs):
         super(ArticleForm,self).__init__(*args,**kwargs)
