@@ -14,9 +14,10 @@ from website.common.CommonPaginator import SelfPaginator
 # @PermissionVerify()
 def WriteArticle(request):
     if request.method == "POST":
-        form = ArticleForm(request.POST)
+        article = Article()
+        article.author = request.user
+        form = ArticleForm(request.POST,instance=article)
         if form.is_valid():
-            form.author = request.user
             form.save()
             return HttpResponseRedirect(reverse('blog_read',kwargs={'username':request.user.username}))
     else:
@@ -35,7 +36,7 @@ def ReadArticle(request,username):
     author_list = User.objects.filter(username=username)
     if(len(author_list)!=1):
         return render_to_response("Not a useful adress.")
-    article_list = Article.objects.filter(author=author_list[0])
+    article_list = Article.objects.order_by('mod_date').filter(author=author_list[0])[::-1]
     # lst = SelfPaginator(request, article_list, 20)
     kwvars = {
         # 'lPage': lst,

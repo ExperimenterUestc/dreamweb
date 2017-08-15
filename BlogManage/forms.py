@@ -13,8 +13,8 @@ class ArticleForm(forms.ModelForm):
             'name': forms.TextInput(attrs={'class':'form-control'}),
             'text': forms.TextInput(attrs={'class': 'form-control'}),
         }
-        # exclude = ['author']
-
+        exclude = ['author']
+    
     def __init__(self, *args, **kwargs):
         super(ArticleForm,self).__init__(*args,**kwargs)
         self.fields['name'].label=u'名 称'

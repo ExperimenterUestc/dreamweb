@@ -8,11 +8,12 @@
                     <div id="collapseOne" class="panel-collapse collapse {% if '/' == request.path %} in {% endif %}">
                         <div class="panel-body">
                             <table class="table">
-                                <tbody><tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-tree-conifer btn-xs"></span><a href="#">分类管理</a>
-                                    </td>
-                                </tr>
+                                <tbody>
+{#                                <tr>#}
+{#                                    <td>#}
+{#                                        <span class="glyphicon glyphicon-tree-conifer btn-xs"></span><a href="#">分类管理</a>#}
+{#                                    </td>#}
+{#                                </tr>#}
                                 <tr>
                                     <td>
                                         <span class="glyphicon glyphicon-tree-conifer btn-xs"></span><a href={% url 'blog_read'  request.user  %}>个人博客主页</a>
@@ -27,6 +28,9 @@
                         </div>
                     </div>
                 </div>
+
+
+            {% if request.user.is_superuser %}
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -58,5 +62,6 @@
                         </div>
                     </div>
                 </div>
+             {% endif %}
 
             </div>
