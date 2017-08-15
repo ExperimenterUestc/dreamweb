@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from UserManage.views.permission import PermissionVerify
 from django.http import HttpResponse,HttpResponseRedirect
 from django.core.urlresolvers import reverse
-from django.shortcuts import render_to_response,RequestContext
+from django.shortcuts import render_to_response,RequestContext,redirect
 from website.common.CommonPaginator import SelfPaginator
 
 
@@ -61,3 +61,19 @@ def PublicArticle(request):
     }
 
     return render_to_response("BlogManage/blog.public.html",kwvars,RequestContext(request))
+
+@login_required
+def ManageArticle(request):
+    if(request.method=="GET"):
+        article_list = Article.objects.order_by('mod_date').filter(author=request.user)[::-1]
+        kwvars = {
+            'request': request,
+            'article_list': article_list,
+        }
+        return render_to_response('BlogManage/blog.manage.html',kwvars,RequestContext(request))
+    else:
+        article_id = request.POST['article_id']
+        a = Article.objects.get(id=article_id)
+        if(a.author==request.user):
+            a.delete()
+        return redirect('blog_manage')

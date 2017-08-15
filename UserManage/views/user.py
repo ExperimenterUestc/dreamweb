@@ -4,7 +4,7 @@
 
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse,HttpResponseRedirect
-from django.shortcuts import render_to_response,RequestContext
+from django.shortcuts import render_to_response,RequestContext,redirect
 from django.contrib.auth.decorators import login_required
 from website.common.CommonPaginator import SelfPaginator
 from UserManage.views.permission import PermissionVerify
@@ -147,3 +147,40 @@ def ResetPassword(request,ID):
     }
 
     return render_to_response('UserManage/password.reset.html',kwvars,RequestContext(request))
+
+
+
+def CheckPassword(pd):
+    if(len(pd)<=5):
+        return False
+    for c in pd:
+        if(not c.isdigit() and not c.isalpha()):
+            return False
+    return True
+
+
+def RegisterUser(request):
+    if(request.method=="GET"):
+        return render_to_response('UserManage/register.html',RequestContext(request))
+    else:
+        username = request.POST['username']
+        nickname = request.POST['nickname']
+        password = request.POST['password'].encode()
+        password_check = request.POST['password_check']
+
+        from ..models import User
+        u = User.objects.filter(username=username)
+        if(len(u)!=0):
+            return render_to_response("已存在相同的账号,请重新注册.")
+        if(password!=password_check):
+            return render_to_response("请输入相同的密码.")
+        if(not CheckPassword(password)):
+            return render_to_response("密码只能为字母数字组组合且长度需大于6")
+
+        u = User()
+        u.nickname = nickname
+        u.username = username
+        u.set_password(password)
+        u.save()
+
+        return redirect('loginurl')

@@ -23,4 +23,7 @@ urlpatterns = patterns('UserManage.views',
     url(r'^permission/list/$', 'permission.ListPermission', name='listpermissionurl'),
     url(r'^permission/edit/(?P<ID>\d+)/$', 'permission.EditPermission', name='editpermissionurl'),
     url(r'^permission/delete/(?P<ID>\d+)/$', 'permission.DeletePermission', name='deletepermissionurl'),
+
+    url(r'register/$','user.RegisterUser',name="registeruser")
+
 )
