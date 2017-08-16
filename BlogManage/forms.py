@@ -11,7 +11,7 @@ class ArticleForm(forms.ModelForm):
         # fields = ['name','text','author']
         widgets = {
             'name': forms.TextInput(attrs={'class':'form-control'}),
-            'text': forms.TextInput(attrs={'class': 'form-control'}),
+            'text': forms.Textarea(attrs={'class':'form-control'}),
         }
         exclude = ['author']
     
