@@ -15,10 +15,13 @@
             <p class="info">{{ article.mod_date }}  |  by <span><a href="#"  rel="author">{{ article.author.nickname }}</a></span>  |  <a href="#"  rel="category">updates</a></p>
             <div class="time"><p>Jun<br><span>16</span></p></div>
             <p><img src="/static/images/user1/caffee-break-final-510x150.jpg" height="150" width="510"></p>
-            <div class="entry" >
-                <font size="2">
+            <style>
+.divcss5{ border:1px solid #00F; height:120px; width:200px;word-wrap:break-word; overflow: auto}
+</style>
+            <div class=".divcss5">
+                <font size="4">
                 {{ article.text }}
-                </font>
+                    </font>
             </div>
         <div class="clear"></div>
         <p class="bottom_info"><a href="#" >1 Comment »</a></p>
